@@ -1,11 +1,21 @@
- //declare bacteria variables here   
- void setup()   
- {     
- 	//initialize bacteria variables here   
+Bacteria [] colony = new Bacteria[150];
+void setup()   
+{     
+	size(600, 600);
+	background(255);
+	for(int i = 0; i < colony.length; i++)
+	{
+		colony[i] = new Bacteria();
+	}	    
  }   
  void draw()   
  {    
- 	//move and show the bacteria   
+ 	fill(252, 225, 155);
+ 	rect(0, 0, 600,600);
+ 	for(int i = 0; i < colony.length; i++)
+ 	{
+ 		colony[i].move();
+ 		colony[i].show();  
  }  
  class Bacteria    
  {     
