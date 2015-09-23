@@ -1,4 +1,4 @@
-Bacteria [] colony = new Bacteria[100];
+Bacteria [] colony = new Bacteria[250];
 void setup(){     
 	size(600, 600);
 	background(255);
@@ -22,33 +22,32 @@ class Bacteria
  	Bacteria(){
  		bacX = (int)(Math.random()*300)+50;
  		bacY = (int)(Math.random()*30)+50;
- 		rgb = (int)(Math.random()*230);
- 		bacSize = (int)(Math.random()*10)+5;
+ 		rgb = color((int)(Math.random()*255), (int)(Math.random()*230),0);
+ 		bacSize = (int)(Math.random()*20)+5;
  	} //end bac constructor
 
  	void show(){
- 		stroke(0, rgb, 0);
- 		fill(0, rgb, 0);
+ 		stroke(rgb);
+ 		fill(rgb);
  		ellipse(bacX,bacY, bacSize, bacSize);
  	} //end show
 
  	void move()
  	{
  			if (bacX < mouseX){
- 				bacX += (int)(Math.random()*4)+3;
+ 				bacX += (int)(Math.random()*5);
  			}
  			else if (bacX > mouseX){
- 				bacX += (int)(Math.random()*4)-3;
+ 				bacX += (int)(Math.random()*5)-3;
  			}
 
  			if (bacY < mouseY){
-				bacY += (int)(Math.random()*4)+3;
+				bacY += (int)(Math.random()*5);
  			}
 
  			else if (bacY > mouseY){
- 				bacY += (int)(Math.random()*4)-3;
+ 				bacY += (int)(Math.random()*5)-3;
  			}
  	} //end move
 
  } // end bac class
-
