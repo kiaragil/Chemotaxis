@@ -23,8 +23,10 @@ public void setup(){
 	} //end loop 
  } //end setup 
  public void draw(){    
+ 	
  	fill(252, 225, 155);
  	rect(0, 0, 600,600);
+ 	victim();
  	for(int i = 0; i < colony.length; i++){
  		colony[i].move();
  		colony[i].show();  
@@ -67,6 +69,11 @@ class Bacteria
  	} //end move
 
  } // end bac class
+
+ public void victim (){
+ 	ellipse(mouseX,mouseY, 50, 50);
+
+ }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "Chemotaxis" };
     if (passedArgs != null) {

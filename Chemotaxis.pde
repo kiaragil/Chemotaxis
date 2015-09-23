@@ -7,8 +7,10 @@ void setup(){
 	} //end loop 
  } //end setup 
  void draw(){    
+ 	
  	fill(252, 225, 155);
  	rect(0, 0, 600,600);
+ 	victim();
  	for(int i = 0; i < colony.length; i++){
  		colony[i].move();
  		colony[i].show();  
@@ -51,3 +53,8 @@ class Bacteria
  	} //end move
 
  } // end bac class
+
+ void victim (){
+ 	ellipse(mouseX,mouseY, 50, 50);
+
+ }
